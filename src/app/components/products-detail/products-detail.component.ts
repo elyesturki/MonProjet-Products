@@ -11,7 +11,11 @@ export class ProductsDetailComponent implements OnInit {
   constructor( private _route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.code = this._route.snapshot.params['id'];
+    // use snapshot
+   // this.code = this._route.snapshot.params['id'];
+
+  // use observable
+   this._route.params.subscribe(parametres => this.code = parametres['id']);
   }
 
 }
